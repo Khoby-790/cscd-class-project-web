@@ -2,9 +2,9 @@ import express from 'express';
 import path from 'path';
 import bodyParser from 'body-parser';
 import mongose from 'mongoose';
+import flash from 'connect-flash';
 import session from 'express-session';
 import passport from 'passport';
-import flash from 'connect-flash';
 import cors from 'cors';
 import dotenv from 'dotenv';
 //routes
@@ -43,9 +43,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
 
-// set app to use flashes
-app.use(flash());
-
 
 //express sessions configuration
 app.use(session({
@@ -54,6 +51,9 @@ app.use(session({
     saveUninitialized: true,
     cookie: { secure: true }
 }));
+
+// set app to use flashes
+app.use(flash());
 
 //init the passport 
 app.use(passport.initialize())
