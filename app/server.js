@@ -38,6 +38,12 @@ require('./config/passport')(passport);
 //init the express app
 const app = express();
 
+// set the view engine
+app.engine('html', require('express-ejs-extend'));
+app.set('views', path.join(__dirname, '../resources/views'));
+app.set('view engine', 'html');
+
+
 //set middlewares
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -52,17 +58,13 @@ app.use(session({
     cookie: { secure: true }
 }));
 
-// set app to use flashes
-app.use(flash());
 
 //init the passport 
 app.use(passport.initialize())
 app.use(passport.session());
 
-// set the view engine
-app.engine('html', require('express-ejs-extend'));
-app.set('views', path.join(__dirname, '../resources/views'));
-app.set('view engine', 'html');
+// set app to use flashes
+app.use(flash());
 
 // Global variables
 app.use(function(req, res, next) {
