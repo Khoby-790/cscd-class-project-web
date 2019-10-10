@@ -1,0 +1,39 @@
+{
+  "name": "cscd-class-project-web",
+  "version": "1.0.0",
+  "description": "WebTech Assignment ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Khoby-790/cscd-class-project-web.git"
+  },
+  "author": "Emmanuel Baidoo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Khoby-790/cscd-class-project-web/issues"
+  },
+  "homepage": "https://github.com/Khoby-790/cscd-class-project-web#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/register": "^7.6.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "express-ejs-extend": "0.0.1",
+    "express-session": "^1.16.2",
+    "mongoose": "^5.7.4",
+    "morgan": "^1.9.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
+  }
+}
